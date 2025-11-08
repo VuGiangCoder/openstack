@@ -1,0 +1,10 @@
+---
+- name: Debug Kolla toolbox container
+  hosts: kolla-toolbox
+  become: true
+  tasks:
+    - name: Run ansible in toolbox as root
+      command: docker exec -t kolla_toolbox ansible --version
+      become: true
+      become_user: root
+
