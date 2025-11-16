@@ -124,6 +124,7 @@ ansible_python_interpreter=/opt/kolla/bin/python3
 
 [cron]
 
-[cinder_api]
-192.168.56.108
+[cinder-api]
+192.168.56.106
+192.168.56.107
 
