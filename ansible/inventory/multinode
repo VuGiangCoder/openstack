@@ -4,7 +4,7 @@ ansible_connection=ssh
 ansible_ssh_port=22
 ansible_ssh_user=root
 ansible_become=true
-ansible_become_method=su
+ansible_become_method=sudo
 ansible_ssh_pass=1
 ansible_password=1
 ansible_become_pass=1
@@ -69,7 +69,6 @@ api_interface=enp0s3
 [neutron-metadata-agent]
 192.168.56.106
 192.168.56.107
-
 [neutron-ovn-agent]
 
 [neutron-ovn-metadata-agent]
@@ -116,4 +115,5 @@ api_interface=enp0s3
 192.168.56.109
 
 [loadbalancer:children]
+
 
