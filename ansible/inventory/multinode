@@ -9,9 +9,10 @@ ansible_ssh_pass=1
 ansible_password=1
 ansible_become_pass=1
 api_interface=enp0s3
+ansible_python_interpreter=/opt/kolla/bin/python3
 # Phần này tìm kiếm group [control] và sửa danh sách IP 
 [control] 
-192.168.56.106
+192.168.56.106 
 192.168.56.107
  
 # Phần này tìm kiếm group [network] và xóa bỏ hết IP 
