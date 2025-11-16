@@ -2,43 +2,45 @@
 [all:vars]
 ansible_connection=ssh
 ansible_ssh_port=22
-ansible_ssh_user=user
+ansible_ssh_user=root
 ansible_become=true
 ansible_become_method=su
 ansible_ssh_pass=1
+ansible_password=1
 ansible_become_pass=1
-api_interface=enp0s8
+api_interface=enp0s3
 # Phần này tìm kiếm group [control] và sửa danh sách IP 
 [control] 
-192.168.56.101 api_interface=enp0s8
-192.168.56.102 api_interface=enp0s8
-192.168.56.103 api_interface=enp0s8
+192.168.56.106
+192.168.56.107
  
 # Phần này tìm kiếm group [network] và xóa bỏ hết IP 
-[network] 
- 
+[network]
+192.168.56.106
+192.168.56.107
+
 # Phần này tìm kiếm group [compute] và sửa danh sách IP 
 [compute] 
-192.168.56.102 api_interface=enp0s8
-192.168.56.103 api_interface=enp0s8
- 
+192.168.56.108
+192.168.56.109
+
 # Phần này tìm kiếm group [monitoring] và xóa bỏ hết IP 
 [monitoring] 
  
 # Phần này tìm kiếm group [storage] và sửa danh sách IP 
 [storage]
-192.168.56.103 api_interface=enp0s8
+192.168.56.109
 
 [kolla-toolbox]
-192.168.56.101 api_interface=enp0s8 ansible_user=root
+192.168.56.106 ansible_user=root
 
 [kolla-logs]
-192.168.56.101
+
 
 [baremetal]
 
 [nova-api]
-192.168.56.101
+192.168.56.106
 
 [nova-novncproxy]
 
@@ -49,27 +51,28 @@ api_interface=enp0s8
 [nova-compute-ironic]
 
 [nova-conductor]
-192.168.56.101 api_interface=enp0s8
-192.168.56.102 api_interface=enp0s8
-192.168.56.103 api_interface=enp0s8
+192.168.56.108
+192.168.56.109
 
 [neutron-server]
-192.168.56.101 api_interface=enp0s8
+192.168.56.106
+192.168.56.107
 
 [neutron-dhcp-agent]
-192.168.56.101 api_interface=enp0s8
+192.168.56.106
+192.168.56.107
 
 [neutron-l3-agent]
-192.168.56.101 api_interface=enp0s8
+192.168.56.106
+192.168.56.107
 
 [neutron-metadata-agent]
-192.168.56.101 api_interface=enp0s8
+192.168.56.106
+192.168.56.107
 
 [neutron-ovn-agent]
 
 [neutron-ovn-metadata-agent]
-192.168.56.102 api_interface=enp0s8
-192.168.56.103 api_interface=enp0s8
 
 [neutron-bgp-dragent]
 
@@ -80,32 +83,37 @@ api_interface=enp0s8
 [ironic-neutron-agent]
 
 [mariadb]
-192.168.56.101 api_interface=enp0s8
+192.168.56.106
+192.168.56.107
 
 [glance-api]
-192.168.56.101
+192.168.56.106
+192.168.56.107
 
 [glance-registry]
-192.168.56.101
+192.168.56.106
 
 [heat-api]
+192.168.56.106
 
 [heat-api-cfn]
 
 [horizon]
-192.168.56.101
+192.168.56.106
 
 [keystone]
-192.168.56.102
+192.168.56.106
 
 [placement-api]
-192.168.56.102
+192.168.56.108
 
 [nova-metadata]
-192.168.56.102
+192.168.56.108
+192.168.56.109
 
 [rabbitmq]
-192.168.56.101
+192.168.56.108
+192.168.56.109
 
 [loadbalancer:children]
 
