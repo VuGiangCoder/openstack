@@ -85,6 +85,7 @@ ansible_python_interpreter=/opt/kolla/bin/python3
 [ironic-neutron-agent]
 
 [mariadb]
+192.168.56.106
 
 [glance-api]
 192.168.56.106
@@ -112,8 +113,8 @@ ansible_python_interpreter=/opt/kolla/bin/python3
 192.168.56.109
 
 [rabbitmq]
-192.168.56.108
-192.168.56.109
+192.168.56.106
+192.168.56.107
 
 [loadbalancer]
 
@@ -122,11 +123,10 @@ ansible_python_interpreter=/opt/kolla/bin/python3
 [cron]
 
 [cinder-api]
-192.168.56.106
-192.168.56.107
+192.168.56.109
 
 [manila-api]
-192.168.56.109
+192.168.56.108
 
 [memcached]
 192.168.56.106
