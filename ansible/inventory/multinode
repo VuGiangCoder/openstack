@@ -122,3 +122,5 @@ ansible_python_interpreter=/opt/kolla/bin/python3
 
 [fluentd]
 
+[cron]
+
