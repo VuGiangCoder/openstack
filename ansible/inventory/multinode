@@ -37,6 +37,8 @@ ansible_python_interpreter=/opt/kolla/bin/python3
 
 [kolla-logs]
 
+[manila-share]
+192.168.56.108
 
 [baremetal]
 
